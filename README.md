@@ -3,8 +3,20 @@ This repository contains RUL prediction method
 
 <h3><b>Remaining Useful Lifecycle Prognostics Model</b></h3>
 
-- Exponentially weighted Linear Regression
+- weighted Linear Regression
 
-- Exponentially weighted Polynomial Regression
+- weighted Polynomial Regression
 
-- Exponentially weighted Exponential Regression
+- weighted Exponential Regression
+
+- weighted Logarithmic Regression
+
+<h3><b>Weighting Schemes</b></h3>
+
+- Exponential weight
+
+- Differencing weight
+
+- Exponential & Differencing weight
+
+
