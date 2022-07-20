@@ -28,6 +28,11 @@ train_y = rowSums(trDegradation)
 test_x = 1:nrow(tsDegradation)
 test_y = rowSums(tsDegradation)
 
+plot(test_x)
+
+plot(log(test_x))
+
+
 # control limit
 cl = bootlimit(train_y, alpha=0.05, m=1000)
 
@@ -44,7 +49,11 @@ failure_threshold = max(test_y)
 # - weighted Linear Regression : WLR
 # - weighted Polynomial Regression : WPR
 # - weighted Exponential regression : WER
-rul = RUL(train_x, train_y, test_x, test_y, time=720, weight=w, mean_life=1000, failure_threshold, alpha=0.05, model='WLR', CL=cl, info=T)
+# - weighted Logarithmic regression : WLogR
+
+rul = RUL(train_x, train_y, test_x, test_y, time=950, weight=w, mean_life=1000, failure_threshold, alpha=0.05, model='WER', CL=cl, info=T)
 
 # visualization of RUL
-RULplot(rul, ylim=c(min(rul$test_y), max(rul$test_y)), xlim=c(0,1000))
+RULplot(rul, ylim=c(min(rul$test_y), max(rul$test_y)), xlim=c(0,1200))
+
+
