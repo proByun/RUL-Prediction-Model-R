@@ -17,7 +17,7 @@ exponential_weight = function(x, y, alpha=0.05){
 }
 
 # lag=1 만 가능
-variation_weight = function(x, y, lag=1){
+differencing_weight = function(x, y, lag=1){
   library(dplyr)
   x = as.matrix(x)
   y = as.matrix(y)
@@ -31,7 +31,7 @@ variation_weight = function(x, y, lag=1){
 }
 
 # plot(diag(weight))
-time_variation_weight = function(x, y, lag=1, alpha=0.05){
+exponential_differencing_weight = function(x, y, lag=1, alpha=0.05){
   x = as.matrix(x)
   y = as.matrix(y)
   weight_var = diag(variation_weight(x, y, lag=1))
