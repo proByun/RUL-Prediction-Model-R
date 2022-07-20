@@ -53,3 +53,21 @@ WER_model <- function(test_x, test_y, time, weight, failure_threshold){
     t_hat = t_hat
   )
 }
+
+# weighted Logarithmic Regression
+ # y = beta0 + beta1ln(x)
+WLogR_model <- function(test_x, test_y, time, weight, failure_threshold){
+  w_beta = W_Hatmatrix_solve(log(test_x[1:time]), test_y[1:time], weight[1:time, 1:time])  
+  intercept = w_beta[1]
+  slope1 = w_beta[2]
+  t_hat = exp((failure_threshold-intercept) / slope1)
+  
+    ret = 
+      list(
+      intercept = intercept,
+      slope1 = slope1,
+      t_hat = t_hat
+  )
+    return(ret)
+}
+
