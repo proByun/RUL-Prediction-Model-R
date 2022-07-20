@@ -3,13 +3,13 @@ This repository contains RUL Prognostics models
 
 <h3><b>Remaining Useful Lifecycle Prognostics Models</b></h3>
 
-- weighted Linear Regression
+- Weighted Linear Regression
 
-- weighted Polynomial Regression
+- Weighted Polynomial Regression
 
-- weighted Exponential Regression
+- Weighted Exponential Regression
 
-- weighted Logarithmic Regression
+- Weighted Logarithmic Regression
 
 <h3><b>Weighting Schemes</b></h3>
 
