@@ -1,5 +1,5 @@
 # Remaining-Useful-Lifecycle-Prediction
-This repository contains RUL prediction method
+This repository contains RUL Prognostics models
 
 <h3><b>Remaining Useful Lifecycle Prognostics Model</b></h3>
 
