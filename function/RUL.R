@@ -1,4 +1,4 @@
-curve_model = c('WLR', 'WPR', 'WER')
+curve_model = c('WLR', 'WPR', 'WER', 'WLogR')
 
 # Information of RUL
 RUL <-  function(train_x, train_y, test_x, test_y, time, weight, mean_life, failure_threshold, alpha=0.05, model=model, CL, info=T){
@@ -24,6 +24,10 @@ RUL <-  function(train_x, train_y, test_x, test_y, time, weight, mean_life, fail
     WER = WER_model(test_x, test_y, time, weight, failure_threshold)
     t_hat = WER$t_hat
     model_param = WER
+  }else{
+    WLogR = WLogR_model(test_x, test_y, time, weight, failure_threshold)
+    t_hat = WLogR$t_hat
+    model_param = WLogR
   }
   
   if(test_y[time]>CL){ # predict
@@ -77,6 +81,11 @@ RULplot <-  function(rul, ...){
       rul$model_param$a * exp(rul$model_param$b*x)
     }
     curve(fx, 1, nrow(rul$test_x)+1000, lwd=3, col=adjustcolor(11, alpha=0.7), add=T)
-    }else{}
+    }else{
+        fx <- function(x){
+          rul$model_param$slope1*log(x) + rul$model_param$intercept
+        }
+        curve(fx, 1, nrow(rul$test_x)+1000, lwd=3, col=adjustcolor(11, alpha=0.7), add=T)
+    }
   }
 }
