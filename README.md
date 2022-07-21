@@ -13,12 +13,12 @@ This repository contains RUL Prognostics models
 
   - Weighted Logarithmic Regression
 
-<h3><b>Weighting Schemes</b></h3>
+- <b>Weighting Schemes</b>
 
-- Exponential weight
+  - Exponential weight
 
-- Differencing weight
+  - Differencing weight
 
-- Exponential & Differencing weight
+  - Exponential & Differencing weight
 
 
