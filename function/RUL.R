@@ -77,14 +77,14 @@ RULplot <-  function(rul, ...){
       }
       curve(fx, 1, nrow(rul$test_x)+1000, lwd=3, col=adjustcolor(11, alpha=0.7), add=T)      
     }else if(rul$model =='WER'){
-    fx <- function(x){
-      rul$model_param$a * exp(rul$model_param$b*x)
-    }
+      fx <- function(x){
+        rul$model_param$a * exp(rul$model_param$b*x)
+      }
     curve(fx, 1, nrow(rul$test_x)+1000, lwd=3, col=adjustcolor(11, alpha=0.7), add=T)
     }else{
-        fx <- function(x){
-          rul$model_param$slope1*log(x) + rul$model_param$intercept
-        }
+      fx <- function(x){
+        rul$model_param$slope1*log(x) + rul$model_param$intercept
+      }
         curve(fx, 1, nrow(rul$test_x)+1000, lwd=3, col=adjustcolor(11, alpha=0.7), add=T)
     }
   }
