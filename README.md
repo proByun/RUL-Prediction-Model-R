@@ -3,7 +3,7 @@ This repository contains RUL Prognostics models
 
 <h3><b>Remaining Useful Lifecycle Prognostics Models</b></h3>
 
-- <b>Weighted Regression</b>
+- <b>Recursive Weighted Regression</b>
 
   - Weighted Linear Regression
 
